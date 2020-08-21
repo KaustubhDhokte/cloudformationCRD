@@ -1,13 +1,13 @@
 apiVersion: cloudf.cloudfdomain/v1
 kind: EC2Instance
 metadata:
-  name: ec2instancesamplemanual
+  name: ec2instancesamplemanualnext
 spec:
   # Add fields here
   instanceType: "t2.micro"
   instanceName: "FourthKubeInstance"
   region: "us-east-2"
-  stackName: "ectwostackeight"
+  stackName: "ectwostackten"
   affinity: "abcd"
   availabilityZone: "us-east-2"
   BlockDeviceMappings:

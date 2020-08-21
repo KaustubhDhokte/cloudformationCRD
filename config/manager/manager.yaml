@@ -15,7 +15,7 @@ spec:
       labels:
         control-plane: controller-manager
     spec:
-      serviceAccountName: cloudfservice
+      serviceAccountName: awsobjects
       containers:
       - command:
         - /manager
