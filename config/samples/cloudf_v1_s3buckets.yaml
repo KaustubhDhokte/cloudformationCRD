@@ -1,0 +1,7 @@
+apiVersion: cloudf.cloudfdomain/v1
+kind: S3Buckets
+metadata:
+  name: s3buckets-sample
+spec:
+  # Add fields here
+  foo: bar

@@ -1,0 +1,10 @@
+domain: cloudfdomain
+repo: cf
+resources:
+- group: cloudf
+  kind: EC2Instance
+  version: v1
+- group: cloudf
+  kind: S3Buckets
+  version: v1
+version: "2"
