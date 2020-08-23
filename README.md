@@ -1,7 +1,7 @@
 # cloudformationCRD
 AWS objects in kubernetes using respective cloudformation specs
 
-** Prerequisites: **
+Prerequisites:
 Listed below are the dependencies for the use of this package
 1. golang version >= 1.14
 2. kubectl server version >= v1.16.8-eks-fd1ea7
@@ -17,5 +17,6 @@ https://stackoverflow.com/questions/53266960/how-do-you-get-kubectl-to-log-in-to
 Once EKS cluster is set up double check that it is set as correct context to be used to work with kubectl
 
 `#> kubectl config get-contexts`
+
 `#> kubectl config current-context`
 
