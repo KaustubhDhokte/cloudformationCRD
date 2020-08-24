@@ -57,7 +57,7 @@ What happens behind the scenes?
 
 `#> kubectl -n cloudformationcrd-system get pods`
 
-`#> kubectl -n cloudformationcrd-system get pod <pod_name> -o yaml`
+`#> kubectl -n cloudformationcrd-system get pod <manager_pod_name> -o yaml`
 
 exmple output:
 
@@ -67,3 +67,8 @@ exmple output:
 > - name: AWS_WEB_IDENTITY_TOKEN_FILE
 >   value: /var/run/secrets/eks.amazonaws.com/serviceaccount/token
 
+2. Check manager logs to see if AWS resources are created.
+
+`#> kubectl -n cloudformationcrd-system logs <manager_pod_name> -c manager`
+
+3. Login to AWS console or use AWS cli to verify the resources created.
