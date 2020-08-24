@@ -17,9 +17,9 @@ https://stackoverflow.com/questions/53266960/how-do-you-get-kubectl-to-log-in-to
 
 Once EKS cluster is set up double check that it is set as correct context to be used to work with kubectl
 
-`#> kubectl config get-contexts`
+    `#> kubectl config get-contexts`
 
-`#> kubectl config current-context`
+    `#> kubectl config current-context`
 
 Once you have a working kubernetes setup clone this repository and change present working directory to ./cloudformationCRD
 
@@ -29,14 +29,14 @@ Make sure all your GO binaries can be accessed from this location. (set $GOPATH 
 
 Run the deploy script:
 
-`./deploy.sh cluster_name container_image_repo_path`
+    `./deploy.sh cluster_name container_image_repo_path`
 
 cluster_name: Name of the EKS cluster created above
 container_image_repo_path: Full valid path to an image into authorized container registry. e.g. GCR or Docker
 
 example command:
 
-`./deploy.sh Cluster2 docker.io/kaustud/cloudformationcrd:latest`
+    `./deploy.sh Cluster2 docker.io/kaustud/cloudformationcrd:latest`
 
 OR
 
@@ -55,9 +55,9 @@ What happens behind the scenes?
 
 1. If deployed correctly the IAM-IRSA-WEB-IDENTITY-HOOK populates the controller pod with two enviroment variables.
 
-`#> kubectl -n cloudformationcrd-system get pods`
+    `#> kubectl -n cloudformationcrd-system get pods`
 
-`#> kubectl -n cloudformationcrd-system get pod <manager_pod_name> -o yaml`
+    `#> kubectl -n cloudformationcrd-system get pod <manager_pod_name> -o yaml`
 
 exmple output:
 
@@ -69,6 +69,6 @@ exmple output:
 
 2. Check manager logs to see if AWS resources are created.
 
-`#> kubectl -n cloudformationcrd-system logs <manager_pod_name> -c manager`
+    `#> kubectl -n cloudformationcrd-system logs <manager_pod_name> -c manager`
 
 3. Login to AWS console or use AWS cli to verify the resources created.
