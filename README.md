@@ -1,7 +1,7 @@
-## cloudformationCRD
+# cloudformationCRD
 AWS objects in kubernetes using respective cloudformation specs
 
-# Prerequisites:
+## Prerequisites:
 Listed below are the dependencies for the use of this package
 1. golang version >= 1.14
 2. kubectl server version >= v1.16.8-eks-fd1ea7
@@ -25,7 +25,7 @@ Once you have a working kubernetes setup clone this repository and change presen
 
 Make sure all your GO binaries can be accessed from this location. (set $GOPATH and $GOROOT environment variables appropriately)
 
-# Usage:
+## Usage:
 
 Run the deploy script:
 
@@ -51,7 +51,7 @@ What happens behind the scenes?
 5. The manager is deployed as a deployment object in the namespace created above with necessary permissions to run.
 6. Create a new object of the each kind defined. The specs are defined in config/samples directory.
 
-# Verify the installation:
+## Verify the installation:
 
 1. If deployed correctly the IAM-IRSA-WEB-IDENTITY-HOOK populates the controller pod with two enviroment variables.
 
