@@ -61,9 +61,9 @@ What happens behind the scenes?
 
 exmple output:
 
-env:
-- name: AWS_ROLE_ARN
-value: arn:aws:iam::<account_id>:role/rolename
-- name: AWS_WEB_IDENTITY_TOKEN_FILE
-value: /var/run/secrets/eks.amazonaws.com/serviceaccount/token
+> env:
+> - name: AWS_ROLE_ARN
+>   value: arn:aws:iam::<account_id>:role/rolename
+> - name: AWS_WEB_IDENTITY_TOKEN_FILE
+>   value: /var/run/secrets/eks.amazonaws.com/serviceaccount/token
 
