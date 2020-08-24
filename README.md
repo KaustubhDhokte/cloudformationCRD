@@ -7,6 +7,7 @@ Listed below are the dependencies for the use of this package
 2. kubectl server version >= v1.16.8-eks-fd1ea7
 3. kubectl client version >= v1.18.6
 4. eksctl >= 0.24.0
+5. kubebuilder >= 2.3.1
 
 Refer step 1 (only) from https://aws.amazon.com/blogs/opensource/introducing-fine-grained-iam-roles-service-accounts/
 to create EKS cluster and create OIDC ID provider using eksctl
@@ -20,3 +21,17 @@ Once EKS cluster is set up double check that it is set as correct context to be 
 
 `#> kubectl config current-context`
 
+Once you have a working kubernetes setup clone this repository and change present working directory to ./cloudformationCRD
+
+Make sure all your GO binaries can be accessed from this location. (set $GOPATH and $GOROOT environment variables appropriately)
+
+Run the deploy script:
+
+`./deploy.sh cluster_name container_image_repo_path`
+
+cluster_name: Name of the EKS cluster created above
+container_image_repo_path: Full valid path to an image into authorized container registry. e.g. GCR or Docker
+
+example command:
+
+`./deploy.sh Cluster2 docker.io/kaustud/cloudformationcrd:latest`

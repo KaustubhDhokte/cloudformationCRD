@@ -1,19 +1,19 @@
 echo "Creating namespace ... "
 
-# kubectl create -f config/manager/namespace.yaml
+kubectl create -f config/manager/namespace.yaml
 
 echo '###################################################################################################'
 
 echo "Creating iamserviceaccount ... "
 
-# eksctl create iamserviceaccount \
-# --name awsobjects \
-# --namespace cloudformationcrd-system \
-# --cluster $1 \
-# --attach-policy-arn arn:aws:iam::aws:policy/AWSCloudFormationFullAccess \
-# --attach-policy-arn arn:aws:iam::aws:policy/AmazonEC2FullAccess \
-# --attach-policy-arn arn:aws:iam::aws:policy/AmazonS3FullAccess \
-# --approve
+eksctl create iamserviceaccount \
+--name awsobjects \
+--namespace cloudformationcrd-system \
+--cluster $1 \
+--attach-policy-arn arn:aws:iam::aws:policy/AWSCloudFormationFullAccess \
+--attach-policy-arn arn:aws:iam::aws:policy/AmazonEC2FullAccess \
+--attach-policy-arn arn:aws:iam::aws:policy/AmazonS3FullAccess \
+--approve
 
 echo '###################################################################################################'
 
@@ -37,7 +37,7 @@ echo '##########################################################################
 
 echo "Creating sample resources in AWS ... "
 
-#kubectl create -f config/samples/cloudf_v1_ec2instance.yaml
+kubectl create -f config/samples/cloudf_v1_ec2instance.yaml
 
 echo '###################################################################################################'
 
